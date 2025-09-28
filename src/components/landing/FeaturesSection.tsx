@@ -9,7 +9,7 @@ export const FeaturesSection = () => {
   return (
     <section className="py-20 bg-slate-800">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">Why You'll Love It</h2>
+       <h2 className="text-3xl font-bold text-center text-white mb-12">Why You Will Love It</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature) => (
             <div key={feature.name} className="bg-slate-700 p-6 rounded-lg">
