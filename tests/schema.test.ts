@@ -12,9 +12,10 @@ describe('Prisma schema', () => {
     assert.isNotNull(userModelMatch, 'User model not found in schema');
 
     const userModel = userModelMatch[1];
+    const createdAtRegex = /createdAt\s+DateTime\s+@default\(now\(\)\)\s+@db\.Timestamp\(6\)/;
     const updatedAtRegex = /updatedAt\s+DateTime\s+@updatedAt\s+@db\.Timestamp\(6\)/;
-    const updatedAtMatch = userModel.match(updatedAtRegex);
 
-    assert.isNotNull(updatedAtMatch, 'updatedAt field does not have @db.Timestamp(6)');
+    assert.isTrue(createdAtRegex.test(userModel), 'createdAt field does not have @db.Timestamp(6)');
+    assert.isTrue(updatedAtRegex.test(userModel), 'updatedAt field does not have @db.Timestamp(6)');
   });
 });
